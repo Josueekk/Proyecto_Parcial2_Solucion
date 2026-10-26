@@ -1,6 +1,30 @@
 [
-  { "id": 201, "nombre": "Tanque de Oxígeno XL", "precio": 50.00, "stock": 5, "categoria": "Soporte Vital" },
-  { "id": 202, "nombre": "Módulo de Navegación", "precio": 120.00, "stock": 2, "categoria": "Propulsión" },
-  { "id": 203, "nombre": "Ración Hidratada Pack", "precio": 15.00, "stock": 10, "categoria": "Alimentación" },
-  { "id": 204, "nombre": "Batería de Iones", "precio": 80.00, "stock": 4, "categoria": "Energía" }
+  {
+    "id": 201,
+    "nombre": "Tanque de Oxígeno XL",
+    "precio": 50,
+    "stock": 5,
+    "categoria": "Soporte Vital"
+  },
+  {
+    "id": 202,
+    "nombre": "Módulo de Navegación",
+    "precio": 120,
+    "stock": 2,
+    "categoria": "Propulsión"
+  },
+  {
+    "id": 203,
+    "nombre": "Ración Hidratada Pack",
+    "precio": 15,
+    "stock": 10,
+    "categoria": "Alimentación"
+  },
+  {
+    "id": 204,
+    "nombre": "Batería de Iones",
+    "precio": 80,
+    "stock": 4,
+    "categoria": "Energía"
+  }
 ]
