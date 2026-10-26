@@ -31,7 +31,7 @@ const reiniciarReactor = (req, res) => {
     // Mensaje de existo al reinicar
     return res.status(200).json({
         estado: 'Sistema reiniciado',
-        mensaje: 'Sistema reiniciado con éxito. Se genero unan nueva temperatura.'
+        mensaje: 'Sistema reiniciado con éxito. Se genero una nueva temperatura.'
     });
 };
 

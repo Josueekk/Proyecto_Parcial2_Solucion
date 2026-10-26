@@ -1,122 +1,59 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import React, { useState } from "react";
+import { Container, Row, Col, Card, CardBody, CardTitle, CardText, Button } from 'reactstrap';
+import Reactor from './components/Reactor';
+import AstroLogistics from './components/AstroLogistics';
 
 function App() {
-  const [count, setCount] = useState(0)
+  // Estado para controlar que pantalla se muestra
+  // Menu; Reactor; astrologistics
+  const [vista, setVista] = useState('menu');
 
+  // Renderizamos segun la condicion
+  if (vista === 'reactor') {
+    return <Reactor volver={() => setVista('menu')} />;
+  }
+
+  if (vista === 'astrologicts') {
+    return <AstroLogistics volver={() => setVista('menu')} />;
+  }
+  // Vista principal (Menú)
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <Container className="py-5">
+      <h1 className="text-center mb-5 fw-bold text-primary">Plataforma de Control</h1>
 
-      <div className="ticks"></div>
+      <Row className="justify-content-center">
+        {/* Opción 1: Reactor */}
+        <Col md="5" className="mb-4">
+          <Card className="h-100 shadow-sm text-center border-danger">
+            <CardBody className="d-flex flex-column">
+              <CardTitle tag="h3" className="text-danger mb-3">⚛️ Reactor</CardTitle>
+              <CardText className="flex-grow-1 text-muted">
+                Accede a la consola de seguridad para estabilizar el núcleo térmico antes de que colapse.
+              </CardText>
+              <Button color="danger" size="lg" onClick={() => setVista('reactor')}>
+                Ingresar al Reactor
+              </Button>
+            </CardBody>
+          </Card>
+        </Col>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+        {/* Opción 2: AstroLogistics */}
+        <Col md="5" className="mb-4">
+          <Card className="h-100 shadow-sm text-center border-info">
+            <CardBody className="d-flex flex-column">
+              <CardTitle tag="h3" className="text-info mb-3">🚀 AstroLogistics</CardTitle>
+              <CardText className="flex-grow-1 text-muted">
+                Gestiona el catálogo de suministros, verifica el stock y prepara la carga de la nave.
+              </CardText>
+              <Button color="info" size="lg" className="text-white" onClick={() => setVista('astrologicts')}>
+                Ingresar a Logística
+              </Button>
+            </CardBody>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
+  );
 }
 
-export default App
+export default App;
