@@ -11,9 +11,13 @@ app.use(express.json()); // Leer req.body en formato json
 
 // Importamos la ruta
 const reactorRoutes = require('./routes/reactorRoutes');
-
 // Montamos las rutas
 app.use('/', reactorRoutes);
+
+//importamos la ruta de inventario  
+const inventarioRoutes = require('./routes/inventarioRoutes');
+// Montamos las rutas
+app.use('/api', inventarioRoutes);
 
 // Iniciamos el servidor
 app.listen(PORT, () =>{
