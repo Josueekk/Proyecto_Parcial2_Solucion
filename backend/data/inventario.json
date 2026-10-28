@@ -3,7 +3,7 @@
     "id": 201,
     "nombre": "Tanque de Oxígeno XL",
     "precio": 50,
-    "stock": 5,
+    "stock": 2,
     "categoria": "Soporte Vital"
   },
   {
@@ -17,14 +17,14 @@
     "id": 203,
     "nombre": "Ración Hidratada Pack",
     "precio": 15,
-    "stock": 10,
+    "stock": 8,
     "categoria": "Alimentación"
   },
   {
     "id": 204,
     "nombre": "Batería de Iones",
     "precio": 80,
-    "stock": 4,
+    "stock": 3,
     "categoria": "Energía"
   }
 ]
