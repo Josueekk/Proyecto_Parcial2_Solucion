@@ -1,5 +1,10 @@
 {
   "creditos": 500,
-  "itemsCargados": [],
-  "total": 0
+  "itemsCargados": [
+    {
+      "id": 204,
+      "cantidad": 1
+    }
+  ],
+  "total": 80
 }

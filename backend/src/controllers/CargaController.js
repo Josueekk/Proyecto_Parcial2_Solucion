@@ -53,6 +53,11 @@ const agregarACarga = (req, res) => {
         producto.stock -= cantSolicitada;
         recalcularTotales(carga, inventario);
 
+        // Validación para no sobrepasar los creditos disponibles 
+        if (carga.total > carga.creditos) {
+            return res.status(400).json({ error: "Créditos insuficientes para esta cantidad" });
+        }
+
         guardarInventario(inventario);
         guardarCarga(carga);
 
