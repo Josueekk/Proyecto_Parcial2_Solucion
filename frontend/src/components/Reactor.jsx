@@ -28,6 +28,13 @@ const Reactor = ({ volver }) => {
       // Convertimos la respuesta a un objeto de javascript
       const data = await response.json();
 
+      // Validacion de un numero fuera del rango
+      if (!response.ok) {
+        setMensaje({ texto: data.error, color: 'danger' });
+        setTemperatura('');
+        return; 
+      }
+
       // Guardamos en el historial
       setHistorial([...historial, { temp: temperatura, pista: data.estado }]);
 
@@ -70,7 +77,7 @@ const Reactor = ({ volver }) => {
           <Card className="shadow-sm border-danger">
             <CardBody className="text-center">
               <CardTitle tag="h3" className="text-danger mb-4">
-                ⚛️ Estabiliza el Reactor
+                 Estabiliza el Reactor
               </CardTitle>
 
               {/* Mensaje de advertencia del servidor */}
@@ -103,7 +110,7 @@ const Reactor = ({ volver }) => {
                 className="mt-3 w-100" 
                 onClick={reiniciarSistema}
               >
-                🔄 Reiniciar Sistema
+                 Reiniciar Sistema
               </Button>
             </CardBody>
           </Card>

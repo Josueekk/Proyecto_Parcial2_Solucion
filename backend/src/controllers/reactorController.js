@@ -10,6 +10,10 @@ const ajustarTemperatura = (req, res) => {
     if (typeof temperatura !== 'number') {
         return res.status(400).json({ error: "Debes ingresar una temperatura valida." });
     }
+    // Validacion de rango (No negativo y no mayor a 100)
+    if (temperatura < 0 || temperatura > 100) {
+        return res.status(400).json({ error: "La temperatura debe estar entre 0 y 100." });
+    }
 
     //Respondemos si la temperatura es: estabilizado
     if (temperatura === temperaturaRandom) {
